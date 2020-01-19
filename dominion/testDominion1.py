@@ -36,6 +36,7 @@ trash = []
 
 #Costruct the Player objects
 
+players=testUtility.CreatePlayers()
 
 #Play the game
 turn  = 0
