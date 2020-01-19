@@ -54,3 +54,15 @@ def StartSupply():
 	supply["Curse"]=[Dominion.Curse()]*nC
 	return supply
 	
+	
+def CreatePlayers():
+	players = []
+	for name in player_names:
+	    if name[0]=="*":
+	        players.append(Dominion.ComputerPlayer(name[1:]))
+	    elif name[0]=="^":
+	        players.append(Dominion.TablePlayer(name[1:]))
+	    else:
+        	players.append(Dominion.Player(name))
+	
+	return players
