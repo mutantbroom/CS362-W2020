@@ -1,3 +1,13 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Jan 19 14:30 2020
+@author: beckjo
+"""
+
+import Dominion
+import random
+from collections import defaultdict
+
 def GetBoxes(nv):
 	box = {}
 	box["Woodcutter"]=[Dominion.Woodcutter()]*10
@@ -35,7 +45,6 @@ def StartSupply():
 	random10 = boxlist[:10]
 	supply = defaultdict(list,[(k,box[k]) for k in random10])
 
-
 	supply["Copper"]=[Dominion.Copper()]*(60-len(player_names)*7)
 	supply["Silver"]=[Dominion.Silver()]*40
 	supply["Gold"]=[Dominion.Gold()]*30
@@ -43,4 +52,5 @@ def StartSupply():
 	supply["Duchy"]=[Dominion.Duchy()]*nV
 	supply["Province"]=[Dominion.Province()]*nV
 	supply["Curse"]=[Dominion.Curse()]*nC
+	return supply
 	
