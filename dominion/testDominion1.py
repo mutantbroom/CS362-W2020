@@ -61,7 +61,7 @@ while not Dominion.gameover(supply):
 #Final score
 dcs=Dominion.cardsummaries(players)
 vp=dcs.loc['VICTORY POINTS']
-vpmax=vp.max()
+vpmax=vp.min()
 winners=[]
 for i in vp.index:
     if vp.loc[i]==vpmax:
