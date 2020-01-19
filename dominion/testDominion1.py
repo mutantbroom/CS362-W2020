@@ -26,21 +26,10 @@ supply_order = {0:['Curse','Copper'],2:['Estate','Cellar','Chapel','Moat'],
                 5:['Duchy','Market','Council Room','Festival','Laboratory','Library','Mine','Witch'],
                 6:['Gold','Adventurer'],8:['Province']}
 
-#Pick 10 cards from box to be in the supply.
-boxlist = [k for k in box]
-random.shuffle(boxlist)
-random10 = boxlist[:10]
-supply = defaultdict(list,[(k,box[k]) for k in random10])
+
+supply = testUtility.StartSupply()
 
 
-#The supply always has these cards
-supply["Copper"]=[Dominion.Copper()]*(60-len(player_names)*7)
-supply["Silver"]=[Dominion.Silver()]*40
-supply["Gold"]=[Dominion.Gold()]*30
-supply["Estate"]=[Dominion.Estate()]*nV
-supply["Duchy"]=[Dominion.Duchy()]*nV
-supply["Province"]=[Dominion.Province()]*nV
-supply["Curse"]=[Dominion.Curse()]*nC
 
 #initialize the trash
 trash = []
