@@ -18,7 +18,7 @@ else:
     nV=8
 nC = -10 + 10 * len(player_names)
 
-box = testUtility.GetBoxes()
+box = testUtility.GetBoxes(nV)
 
 supply_order = {8:['Curse','Copper'],2:['Estate','Cellar','Chapel','Moat'],
                 3:['Silver','Chancellor','Village','Woodcutter','Workshop'],
@@ -26,12 +26,12 @@ supply_order = {8:['Curse','Copper'],2:['Estate','Cellar','Chapel','Moat'],
                 5:['Duchy','Market','Council Room','Festival','Laboratory','Library','Mine','Witch'],
                 6:['Gold','Adventurer'],0:['Province']}
 
-supply = testUtility.StartSupply()
+supply = testUtility.StartSupply(nV,nC)
 
 #initialize the trash
 trash = []
 
-players = testUtility.CreatePlayers()
+players = testUtility.CreatePlayers(player_names)
 
 #Play the game
 turn  = 0
