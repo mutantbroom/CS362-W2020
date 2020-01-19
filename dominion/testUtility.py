@@ -8,7 +8,7 @@ import Dominion
 import random
 from collections import defaultdict
 
-def GetBoxes(nv):
+def GetBoxes(nV):
 	box = {}
 	box["Woodcutter"]=[Dominion.Woodcutter()]*10
 	box["Smithy"]=[Dominion.Smithy()]*10
@@ -38,7 +38,7 @@ def GetBoxes(nv):
 	return box
 
 
-def StartSupply():
+def StartSupply(nV,nC):
 
 	boxlist = [k for k in box]
 	random.shuffle(boxlist)
@@ -55,7 +55,7 @@ def StartSupply():
 	return supply
 	
 	
-def CreatePlayers():
+def CreatePlayers(player_names):
 	players = []
 	for name in player_names:
 	    if name[0]=="*":
