@@ -18,7 +18,7 @@ else:
     nV=8
 nC = -10 + 10 * len(player_names)
 
-box = testUtility.GetBoxes()
+box = testUtility.GetBoxes(nV)
 
 supply_order = {0:['Curse','Copper'],2:['Estate','Cellar','Chapel','Moat'],
                 3:['Silver','Chancellor','Village','Woodcutter','Workshop'],
@@ -27,7 +27,7 @@ supply_order = {0:['Curse','Copper'],2:['Estate','Cellar','Chapel','Moat'],
                 6:['Gold','Adventurer'],8:['Province']}
 
 
-supply = testUtility.StartSupply()
+supply = testUtility.StartSupply(nV,nC)
 
 
 
