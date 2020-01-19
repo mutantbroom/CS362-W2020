@@ -1,5 +1,4 @@
-def GetBoxes(nv)
-	#Define box
+def GetBoxes(nv):
 	box = {}
 	box["Woodcutter"]=[Dominion.Woodcutter()]*10
 	box["Smithy"]=[Dominion.Smithy()]*10
@@ -27,3 +26,21 @@ def GetBoxes(nv)
 	box["Thief"]=[Dominion.Thief()]*10
 	box["Throne Room"]=[Dominion.Throne_Room()]*10
 	return box
+
+
+def StartSupply():
+
+	boxlist = [k for k in box]
+	random.shuffle(boxlist)
+	random10 = boxlist[:10]
+	supply = defaultdict(list,[(k,box[k]) for k in random10])
+
+
+	supply["Copper"]=[Dominion.Copper()]*(60-len(player_names)*7)
+	supply["Silver"]=[Dominion.Silver()]*40
+	supply["Gold"]=[Dominion.Gold()]*30
+	supply["Estate"]=[Dominion.Estate()]*nV
+	supply["Duchy"]=[Dominion.Duchy()]*nV
+	supply["Province"]=[Dominion.Province()]*nV
+	supply["Curse"]=[Dominion.Curse()]*nC
+	
